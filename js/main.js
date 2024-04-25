@@ -3,4 +3,13 @@ import {
     getOfficesFromSpain,
 } from "./module/offices.js"
 
-console.log(await getOfficesFromSpain())
+
+
+import {
+    getInfoEmployeesByBoss,
+    getBoss,
+} from "./module/employees.js"
+
+
+
+console.log(await getBoss())
