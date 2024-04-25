@@ -15,6 +15,7 @@ import {
 
 import {
     getSpainClients,
+    getClientsFromCityBySalesManagerCode,
 } from "./module/clients.js"
 
 
@@ -31,6 +32,7 @@ import {
 
 import {
     getClientsCodeFromSpecificDate,
+    getPaymentMethods,
 } from "./module/payments.js"
 
-console.log(await getJanuaryDeliveries())
+console.log(await getClientsFromCityBySalesManagerCode())

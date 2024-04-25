@@ -17,3 +17,20 @@ export const getClientsCodeFromSpecificDate = async() =>{
     })
     return result
 }
+
+// 14. Devuelve un listado con todas las formas de pago 
+// que aparecen en la tabla `pago`. 
+// Tenga en cuenta que no deben aparecer 
+// formas de pago repetidas.
+
+export const getPaymentMethods = async() =>{
+    let res = await fetch("http://localhost:5505/payments")
+    let data = await res.json()
+    let result = []
+    data.forEach(val =>{
+        if(!result.includes(val.payment)) {
+            result.push(val.payment)
+        }
+    })
+    return result
+}
