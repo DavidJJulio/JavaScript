@@ -33,6 +33,8 @@ import {
 import {
     getClientsCodeFromSpecificDate,
     getPaymentMethods,
+    getPaymentsPaypalByDate,
 } from "./module/payments.js"
 
-console.log(await getClientsFromCityBySalesManagerCode())
+console.log(await getPaymentsPaypalByDate())
+
