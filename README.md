@@ -20,8 +20,8 @@ DONE 10. Devuelve un listado con el código de pedido, código de cliente, fech
 - Utilizando la función [`DATEDIFF` de MySQL](https://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html#function_datediff).
 - ¿Sería posible resolver esta consulta utilizando el operador de suma `+` o resta `-`?
 
-11. Devuelve un listado de todos los pedidos que fueron **rechazados** en `2009`.
-12. Devuelve un listado de todos los pedidos que han sido **entregados** en el mes de enero de cualquier año.
+DONE 11. Devuelve un listado de todos los pedidos que fueron **rechazados** en `2009`.
+DONE 12. Devuelve un listado de todos los pedidos que han sido **entregados** en el mes de enero de cualquier año.
 13. Devuelve un listado con todos los pagos que se realizaron en el año `2008` mediante `Paypal`. Ordene el resultado de mayor a menor.
 14. Devuelve un listado con todas las formas de pago que aparecen en la tabla `pago`. Tenga en cuenta que no deben aparecer formas de pago repetidas.
 15. Devuelve un listado con todos los productos que pertenecen a la gama `Ornamentales` y que tienen más de `100` unidades en stock. El listado deberá estar ordenado por su precio de venta, mostrando en primer lugar los de mayor precio.
