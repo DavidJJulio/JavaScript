@@ -36,5 +36,11 @@ import {
     getPaymentsPaypalByDate,
 } from "./module/payments.js"
 
-console.log(await getPaymentsPaypalByDate())
+
+
+import {
+    getProductsByGamaAndStock,
+} from "./module/product.js"
+
+console.log(await getProductsByGamaAndStock())
 
