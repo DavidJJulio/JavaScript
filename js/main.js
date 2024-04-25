@@ -8,8 +8,9 @@ import {
 import {
     getInfoEmployeesByBoss,
     getBoss,
+    getEmployeesDiff_from_SpecificPosition,
 } from "./module/employees.js"
 
 
 
-console.log(await getBoss())
+console.log(await getEmployeesDiff_from_SpecificPosition())

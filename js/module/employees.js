@@ -44,3 +44,23 @@ export const getBoss = async() =>{
     })
     return result
 }
+
+// 5. Devuelve un listado con el nombre, apellidos y puesto de 
+// aquellos empleados que no sean representantes de ventas.
+
+export const getEmployeesDiff_from_SpecificPosition = async() =>{
+    let res = await fetch("http://localhost:5502/employees")
+    let data = await res.json()
+    let result = []
+    data.forEach(val =>{
+        if(val.position != "Representante Ventas"){
+            result.push({
+                name: val.name,
+                lastname1: val.lastname1,
+                lastname2: val.lastname2,
+                position: val.position,
+            })
+        }
+    })
+    return result
+}
