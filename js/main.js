@@ -21,6 +21,8 @@ import {
 
 import {
     getRequestStatus,
+    getRetardedDeliveries,
+    getRightDeliveries,
 } from "./module/requests.js"
 
 
@@ -29,4 +31,4 @@ import {
     getClientsCodeFromSpecificDate,
 } from "./module/payments.js"
 
-console.log(await getClientsCodeFromSpecificDate())
+console.log(await getRightDeliveries())
