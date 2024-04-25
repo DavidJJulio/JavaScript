@@ -1,9 +1,9 @@
 ### Consultas sobre una tabla
 
-1. Devuelve un listado con el código de oficina y la ciudad donde hay oficinas.
-2. Devuelve un listado con la ciudad y el teléfono de las oficinas de España.
-3. Devuelve un listado con el nombre, apellidos y email de los empleados cuyo jefe tiene un código de jefe igual a 7.
-4. Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa.
+DONE 1. Devuelve un listado con el código de oficina y la ciudad donde hay oficinas.
+DONE 2. Devuelve un listado con la ciudad y el teléfono de las oficinas de España.
+DONE 3. Devuelve un listado con el nombre, apellidos y email de los empleados cuyo jefe tiene un código de jefe igual a 7.
+DONE 4. Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa.
 5. Devuelve un listado con el nombre, apellidos y puesto de aquellos empleados que no sean representantes de ventas.
 6. Devuelve un listado con el nombre de los todos los clientes españoles.
 7. Devuelve un listado con los distintos estados por los que puede pasar un pedido.
