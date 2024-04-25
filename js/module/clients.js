@@ -28,3 +28,19 @@ export const getClientsFromCityBySalesManagerCode = async() =>{
     })
     return result
 }
+
+// MULTITABLA 1. Obtén un listado con el nombre de cada 
+// cliente y el nombre y apellido de su representante de ventas.
+
+export const getClientAndSellsAndEmployee = async() =>{
+    let res = await fetch("http://localhost:5501/clients")
+    let data = await res.json()
+    let result = []
+    data.forEach(val =>{
+        result.push({
+            client_name: val.client_name,
+            code_employee_sales_manager: val.code_employee_sales_manager
+        })
+    })
+    return result
+}

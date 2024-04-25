@@ -64,3 +64,25 @@ export const getEmployeesDiff_from_SpecificPosition = async() =>{
     })
     return result
 }
+
+// MULTITABLA 1. Obtén un listado con el nombre de cada 
+// cliente y el nombre y apellido de su representante de ventas.
+
+import {
+    getClientAndSellsAndEmployee
+} from "./clients.js"
+
+export const getEmployeeOfTheClient = async() =>{
+    let res = await fetch("http://localhost:5502/employees")
+    let res2 = await getClientAndSellsAndEmployee()
+    let data = await res.json();
+    let result = []
+    data.forEach(val =>{
+        res2.forEach(val2 =>{
+            if(val2.code_employee_sales_manager == val.employee_code){
+                result.push(val2)
+            }
+        })
+    })
+    return result
+}

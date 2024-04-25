@@ -29,7 +29,7 @@ DONE 16. Devuelve un listado con todos los clientes que sean de la ciudad de `Ma
 
 ### Consultas multitabla
 
-MULTITABLA 1. Obtén un listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas.
+DONE MULTITABLA 1. Obtén un listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas.
 MULTITABLA 2. Muestra el nombre de los clientes que hayan realizado pagos junto con el nombre de sus representantes de ventas.
 MULTITABLA 3. Muestra el nombre de los clientes que **no** hayan realizado pagos junto con el nombre de sus representantes de ventas.
 MULTITABLA 4. Devuelve el nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.

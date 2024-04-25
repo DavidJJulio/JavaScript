@@ -9,6 +9,7 @@ import {
     getInfoEmployeesByBoss,
     getBoss,
     getEmployeesDiff_from_SpecificPosition,
+    getEmployeeOfTheClient,
 } from "./module/employees.js"
 
 
@@ -42,5 +43,5 @@ import {
     getProductsByGamaAndStock,
 } from "./module/product.js"
 
-console.log(await getProductsByGamaAndStock())
+console.log(await getEmployeeOfTheClient())
 
