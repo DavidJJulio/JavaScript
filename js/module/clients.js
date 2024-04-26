@@ -72,3 +72,46 @@ export const getClientsFromPayments = async() =>{
     })
     return result
 }
+
+// MULTITABLA 3. Muestra el nombre de los clientes 
+// que **no** hayan realizado 
+// pagos junto con el nombre de sus representantes de ventas.
+
+import {
+    getCode_Clients,
+} from "./payments.js"
+
+
+
+export const getClientsByPayments = async() =>{
+    let res = await fetch("http://localhost:5501/clients")
+    let data = await res.json()
+    let res2 = await getCode_Clients()
+    let temporal = []
+    let temporal2 = []
+    let result = []
+    data.forEach(val =>{
+        temporal.push(val.client_code)
+    })
+    for(const[index, value] of temporal.entries()){
+        for(const[i, val] of res2.entries()){
+            if(value == val){
+                delete(temporal[index])
+            }
+        }
+    }
+    temporal.forEach(val =>{
+        temporal2.push(val)
+    })
+    data.forEach(val =>{
+        for(const[index, value] of temporal2.entries()){
+            if(val.client_code == value){
+                result.push({
+                    client_name: val.client_name,
+                    code_employee_sales_manager: val.code_employee_sales_manager
+                })
+            }
+        }
+    })
+    return temporal2
+}
