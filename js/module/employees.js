@@ -80,7 +80,13 @@ export const getEmployeeOfTheClient = async() =>{
     data.forEach(val =>{
         res2.forEach(val2 =>{
             if(val2.code_employee_sales_manager == val.employee_code){
-                result.push(val2)
+                result.push({
+                    client_name: val2.client_name,
+                    employee_name: val.name,
+                    employee_lastname1: val.lastname1,
+                    employee_lastname2: val.lastname2,
+                    employee_code: val.employee_code
+                })
             }
         })
     })
