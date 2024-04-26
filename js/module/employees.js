@@ -122,6 +122,8 @@ export const getSalesManagerFromClients = async() =>{
                 result.push({
                     client_name: val2.client_name,
                     employee_name: val.name,
+                    employee_lastname1: val.lastname1,
+                    employee_lastname2: val.lastname2,
                     code_office: val.code_office
                 })
             }
