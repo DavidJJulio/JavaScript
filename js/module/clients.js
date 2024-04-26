@@ -44,3 +44,31 @@ export const getClientAndSellsAndEmployee = async() =>{
     })
     return result
 }
+
+// MULTITABLA 2. Muestra el nombre de los 
+// clientes que hayan realizado pagos 
+// junto con el nombre de sus representantes de ventas.
+
+import {
+    getPaymentsFromClients,
+} from "./payments.js"
+
+
+
+export const getClientsFromPayments = async() =>{
+    let res = await fetch("http://localhost:5501/clients")
+    let data = await res.json()
+    let res2 = await getPaymentsFromClients()
+    let result = []
+    data.forEach(val =>{
+        res2.forEach(val2 =>{
+            if(val.client_code == val2){
+                result.push({
+                    client_name: val.client_name,
+                    code_employee_sales_manager: val.code_employee_sales_manager
+                })
+            }
+        })
+    })
+    return result
+}

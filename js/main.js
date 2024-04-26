@@ -10,6 +10,7 @@ import {
     getBoss,
     getEmployeesDiff_from_SpecificPosition,
     getEmployeeOfTheClient,
+    getSalesManagerFromClients,
 } from "./module/employees.js"
 
 
@@ -17,6 +18,7 @@ import {
 import {
     getSpainClients,
     getClientsFromCityBySalesManagerCode,
+    getClientsFromPayments,
 } from "./module/clients.js"
 
 
@@ -35,6 +37,7 @@ import {
     getClientsCodeFromSpecificDate,
     getPaymentMethods,
     getPaymentsPaypalByDate,
+    getPaymentsFromClients,
 } from "./module/payments.js"
 
 
@@ -43,5 +46,5 @@ import {
     getProductsByGamaAndStock,
 } from "./module/product.js"
 
-console.log(await getEmployeeOfTheClient())
+console.log(await getSalesManagerFromClients())
 

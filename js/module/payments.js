@@ -70,3 +70,20 @@ export const getPaymentMethods = async() =>{
     })
     return result
 }
+
+// MULTITABLA 2. Muestra el nombre de los 
+// clientes que hayan realizado pagos 
+// junto con el nombre de sus representantes de ventas.
+
+export const getPaymentsFromClients = async() =>{
+    let res = await fetch("http://localhost:5505/payments")
+    let data = await res.json();
+    let result = [];
+    data.forEach(val =>{
+        if(!result.includes(val.code_client)){
+            result.push(val.code_client)
+        }
+        
+    })
+    return result
+}
