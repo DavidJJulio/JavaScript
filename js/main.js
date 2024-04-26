@@ -1,6 +1,7 @@
 import {
     getOfficesbyCity,
     getOfficesFromSpain,
+    getOfficesByEmployees,
 } from "./module/offices.js"
 
 
@@ -48,5 +49,5 @@ import {
     getProductsByGamaAndStock,
 } from "./module/product.js"
 
-console.log(await getClientsByPayments())
+console.log(await getOfficesByEmployees())
 

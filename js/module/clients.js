@@ -49,6 +49,14 @@ export const getClientAndSellsAndEmployee = async() =>{
 // clientes que hayan realizado pagos 
 // junto con el nombre de sus representantes de ventas.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 4. Devuelve el nombre de los clientes 
+// que han hecho pagos y el nombre de sus 
+// representantes junto con la 
+// ciudad de la oficina a la que 
+// pertenece el representante.
+
 import {
     getPaymentsFromClients,
 } from "./payments.js"
@@ -115,3 +123,4 @@ export const getClientsByPayments = async() =>{
     })
     return temporal2
 }
+

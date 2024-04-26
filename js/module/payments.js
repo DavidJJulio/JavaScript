@@ -75,6 +75,16 @@ export const getPaymentMethods = async() =>{
 // clientes que hayan realizado pagos 
 // junto con el nombre de sus representantes de ventas.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 4. Devuelve el nombre de los clientes 
+// que han hecho pagos y el nombre de sus 
+// representantes junto con la 
+// ciudad de la oficina a la que 
+// pertenece el representante.
+
+
+
 export const getPaymentsFromClients = async() =>{
     let res = await fetch("http://localhost:5505/payments")
     let data = await res.json();
@@ -104,3 +114,4 @@ export const getCode_Clients = async() =>{
     })
     return result
 }
+
