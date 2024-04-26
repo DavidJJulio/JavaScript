@@ -83,6 +83,10 @@ export const getPaymentMethods = async() =>{
 // ciudad de la oficina a la que 
 // pertenece el representante.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 6. Lista la dirección de las 
+// oficinas que tengan clientes en `Fuenlabrada`.
 
 
 export const getPaymentsFromClients = async() =>{

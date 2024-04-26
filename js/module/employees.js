@@ -105,15 +105,21 @@ export const getEmployeeOfTheClient = async() =>{
 // ciudad de la oficina a la que 
 // pertenece el representante.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 6. Lista la dirección de las 
+// oficinas que tengan clientes en `Fuenlabrada`.
+
 import {
     getClientsFromPayments,
+    getFromFuenlabrada,
 } from "./clients.js"
 
 
 
 export const getSalesManagerFromClients = async() =>{
     let res = await fetch("http://localhost:5502/employees")
-    let res2 = await getClientsFromPayments()
+    let res2 = await getFromFuenlabrada()
     let data = await res.json();
     let result = []
     data.forEach(val =>{
@@ -121,6 +127,7 @@ export const getSalesManagerFromClients = async() =>{
             if(val.employee_code == val2.code_employee_sales_manager){
                 result.push({
                     client_name: val2.client_name,
+                    client_city: val2.client_city,
                     employee_name: val.name,
                     employee_lastname1: val.lastname1,
                     employee_lastname2: val.lastname2,

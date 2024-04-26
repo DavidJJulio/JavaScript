@@ -130,3 +130,27 @@ export const getClientsByPayments = async() =>{
     })
     return result
 }
+
+// MULTITABLA 6. Lista la dirección de las 
+// oficinas que tengan clientes en `Fuenlabrada`.
+
+export const getFromFuenlabrada = async() =>{
+    let res = await fetch("http://localhost:5501/clients?city=Fuenlabrada")
+    let data = await res.json()
+    let res2 = await getPaymentsFromClients()
+    let result = []
+    data.forEach(val =>{
+        res2.forEach(val2 =>{
+            if(val2  == val.client_code){
+                result.push({
+                    client_code: val.client_code,
+                    client_name: val.client_name,
+                    client_city: val.city,
+                    code_employee_sales_manager: val.code_employee_sales_manager
+                })
+            }
+        })
+    })
+    return result
+}
+

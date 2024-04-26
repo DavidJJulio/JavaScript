@@ -21,7 +21,8 @@ import {
     getSpainClients,
     getClientsFromCityBySalesManagerCode,
     getClientsFromPayments,
-    getClientsByPayments
+    getClientsByPayments,
+    getFromFuenlabrada
 } from "./module/clients.js"
 
 
