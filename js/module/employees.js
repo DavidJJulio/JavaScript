@@ -68,6 +68,12 @@ export const getEmployeesDiff_from_SpecificPosition = async() =>{
 // MULTITABLA 1. Obtén un listado con el nombre de cada 
 // cliente y el nombre y apellido de su representante de ventas.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 7. Devuelve el nombre de los clientes y 
+// el nombre de sus representantes junto con la 
+// ciudad de la oficina a la que pertenece el representante.
+
 import {
     getClientAndSellsAndEmployee
 } from "./clients.js"
@@ -85,6 +91,7 @@ export const getEmployeeOfTheClient = async() =>{
                     employee_name: val.name,
                     employee_lastname1: val.lastname1,
                     employee_lastname2: val.lastname2,
+                    code_office: val.code_office,
                     employee_code: val.employee_code
                 })
             }

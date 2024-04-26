@@ -46,13 +46,14 @@ export const getOfficesFromSpain = async() =>{
 import {
     getSalesManagerFromClients,
     getNameByClient,
+    getEmployeeOfTheClient,
 } from "./employees.js"
 
 export const getOfficesByEmployees = async() =>{
     let res = await fetch("http://localhost:5504/offices")
     let data = await res.json()
     let result = []
-    let res2 = await getSalesManagerFromClients();
+    let res2 = await getEmployeeOfTheClient();
     data.forEach( val=>{
         res2.forEach(val2 =>{
             if(val2.code_office == val.code_office){

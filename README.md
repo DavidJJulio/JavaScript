@@ -34,8 +34,8 @@ DONE MULTITABLA 2. Muestra el nombre de los clientes que hayan realizado pagos j
 DONE MULTITABLA 3. Muestra el nombre de los clientes que **no** hayan realizado pagos junto con el nombre de sus representantes de ventas.
 DONE MULTITABLA 4. Devuelve el nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
 DONE MULTITABLA 5. Devuelve el nombre de los clientes que **no** hayan hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
-MULTITABLA 6. Lista la dirección de las oficinas que tengan clientes en `Fuenlabrada`.
-MULTITABLA 7. Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
+DONE MULTITABLA 6. Lista la dirección de las oficinas que tengan clientes en `Fuenlabrada`.
+DONE MULTITABLA 7. Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
 MULTITABLA 8. Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.
 MULTITABLA 9. Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y el nombre del jefe de sus jefe.
 MULTITABLA 10. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
