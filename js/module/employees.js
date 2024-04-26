@@ -136,6 +136,13 @@ export const getSalesManagerFromClients = async() =>{
 // que **no** hayan realizado 
 // pagos junto con el nombre de sus representantes de ventas.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 5. Devuelve el nombre de los clientes que 
+// **no** hayan hecho pagos y el nombre de sus representantes 
+// junto con la ciudad de la oficina a la que 
+// pertenece el representante.
+
 import {
     getClientsByPayments,
 } from "./clients.js"
@@ -150,10 +157,13 @@ export const getNameByClient = async() =>{
             if(val.employee_code == val2.code_employee_sales_manager){
                 result.push({
                     client_name: val2.client_name,
-                    employee_name: val.name
+                    employee_name: val.name,
+                    employee_lastname1: val.lastname1,
+                    employee_lastname2: val.lastname2,
+                    code_office: val.code_office
                 })
             }
         })
     })
-    return res2
+    return result
 }

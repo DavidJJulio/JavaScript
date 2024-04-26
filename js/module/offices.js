@@ -36,15 +36,23 @@ export const getOfficesFromSpain = async() =>{
 // ciudad de la oficina a la que 
 // pertenece el representante.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 5. Devuelve el nombre de los clientes que 
+// **no** hayan hecho pagos y el nombre de sus representantes 
+// junto con la ciudad de la oficina a la que 
+// pertenece el representante.
+
 import {
     getSalesManagerFromClients,
+    getNameByClient,
 } from "./employees.js"
 
 export const getOfficesByEmployees = async() =>{
     let res = await fetch("http://localhost:5504/offices")
     let data = await res.json()
     let result = []
-    let res2 = await getSalesManagerFromClients();
+    let res2 = await getNameByClient();
     data.forEach( val=>{
         res2.forEach(val2 =>{
             if(val2.code_office == val.code_office){

@@ -85,6 +85,13 @@ export const getClientsFromPayments = async() =>{
 // que **no** hayan realizado 
 // pagos junto con el nombre de sus representantes de ventas.
 
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+// MULTITABLA 5. Devuelve el nombre de los clientes que 
+// **no** hayan hecho pagos y el nombre de sus representantes 
+// junto con la ciudad de la oficina a la que 
+// pertenece el representante.
+
 import {
     getCode_Clients,
 } from "./payments.js"
@@ -111,16 +118,15 @@ export const getClientsByPayments = async() =>{
     temporal.forEach(val =>{
         temporal2.push(val)
     })
-    data.forEach(val =>{
-        for(const[index, value] of temporal2.entries()){
-            if(val.client_code == value){
+    temporal2.forEach(val =>{
+        for(const[index, value] of data.entries()){
+            if(val == value.client_code){
                 result.push({
-                    client_name: val.client_name,
-                    code_employee_sales_manager: val.code_employee_sales_manager
+                    client_name: value.client_name,
+                    code_employee_sales_manager: value.code_employee_sales_manager
                 })
             }
         }
     })
-    return temporal2
+    return result
 }
-
