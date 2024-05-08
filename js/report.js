@@ -1,39 +1,32 @@
-import { myCard } from "./components/myCard.js";
 import "./components/clock.js";
-import { myDetails } from "./components/myDetails.js";
+import { Mycard } from "./components/myCard.js";
+import { Mydetails } from "./components/myDetails.js";
 
 
-customElements.define("my-details", myDetails)
-customElements.define("my-card", myCard)
+let btn = document.querySelectorAll("button")
+let report__menu = document.querySelectorAll(".report__menu button")
+let report__details = document.querySelector(".report__details")
+btn.forEach(val =>{
+    val.addEventListener("click", (e)=>{
+        for(let val of report__menu) val.classList.remove('report__active');
+        e.target.classList.add("report__active")
+        
+        if(e.target.innerHTML=="clients"){
+            report__details.innerHTML = /*html*/`
+                <my-details logic="client_6" text="7. Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante."></my-details>
+                <my-details logic="client_16" text="16. Devuelve un listado con todos los clientes que sean de la ciudad de Madrid y cuyo representante de ventas tenga el código de empleado 11 o 30."></my-details>
+            `
+        }
+        if(e.target.innerHTML=="employees"){
+            report__details.innerHTML = /*html*/`
+                <my-details logic="employ_12" text="12. Devuelve un listado con los datos de los empleados que no  tienen clientes asociados y el nombre de su jefe asociado"></my-details>
+            
+            `;
+        }
 
-
-
-
-
-
-// import { getClientsEmploy } from "./module/clients.js";
-// const queryAboutTable7 = document.querySelector("#queryAboutTable7");
-// queryAboutTable7.addEventListener("click", async(e)=>{
-//     let [,report__container] = queryAboutTable7.children
-//     if(!report__container.innerHTML){
-//         let data = await getClientsEmploy();
-//         let plantilla = "";
-//         console.log(data);
-//         data.forEach(val => {
-//             plantilla += `
-//                 <div class="report__card">
-//                 <div class="card__title">
-//                     <div>${val.client_name}</div>
-//                 </div>
-//                 <div class="card__body">
-//                     <div class="body__marck">
-//                         <p><b>Nombre del empleado: </b>${val.name_employee}</p>
-//                         <p><b>Ciudad: </b>${val.city}</p>
-//                     </div>
-//                 </div>
-//             </div>
-//             `;
-//         });
-//         report__container.innerHTML = plantilla;
-//     }
-// })
+    })
+})
+let [clients] = report__menu
+clients.click();
+customElements.define("my-details", Mydetails)
+customElements.define("my-card", Mycard)

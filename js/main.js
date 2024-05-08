@@ -50,5 +50,5 @@ import {
     getProductsByGamaAndStock,
 } from "./module/product.js"
 
-console.log(await getOfficesByEmployees())
+console.log(await getSpainClients())
 
