@@ -1,7 +1,4 @@
 export class Mydetails extends HTMLElement{
-    myCard
-    p
-    details
     constructor(){
         super();
         this.attachShadow({mode: "open"});
@@ -11,7 +8,7 @@ export class Mydetails extends HTMLElement{
                 <summary>
                     <div class="details__description">Campus: </div>
                     <div class="details__container">
-                        <p></p>
+                        <p>Consulta x</p>
                     </div>
                 </summary>
                 <div class="report__container">
@@ -19,17 +16,8 @@ export class Mydetails extends HTMLElement{
                 </div>
             </details>
         `;
-        this.myCard = this.shadowRoot.querySelector("my-card")
-        this.p = this.shadowRoot.querySelector("p");
-        this.details = this.shadowRoot.querySelector("details")
+        
     }
 
-    static get observedAttributes() {
-        return ["logic", "text"];
-    }
-    attributeChangedCallback(name, old, now) {
-        if(name == "logic") Mydetails.query = now
-        if(name == "text") this.p.textContent = now
-    }
 }
 
