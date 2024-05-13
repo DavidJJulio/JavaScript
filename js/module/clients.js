@@ -8,6 +8,7 @@ export const getSpainClients = async() =>{
     data.forEach(val => {
         result.push({
             client_name: val.client_name,
+            client_country: val.country
         })
     });
     return result
