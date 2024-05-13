@@ -24,7 +24,8 @@ import {
     getClientsFromCityBySalesManagerCode,
     getClientsFromPayments,
     getClientsByPayments,
-    getFromFuenlabrada
+    getFromFuenlabrada,
+    getRetardedDeliveryClients,
 } from "./module/clients.js"
 
 
@@ -52,5 +53,5 @@ import {
     getProductsByGamaAndStock,
 } from "./module/product.js"
 
-console.log(await getAll3())
+console.log(await getRetardedDeliveryClients())
 

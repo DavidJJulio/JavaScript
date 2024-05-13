@@ -1,3 +1,15 @@
+import {
+    getRetardedDeliveries,
+} from "./requests.js"
+
+import {
+    getCode_Clients,
+} from "./payments.js"
+
+import {
+    getPaymentsFromClients,
+} from "./payments.js"
+
 // 6. Devuelve un listado con el nombre de los 
 // todos los clientes españoles.
 
@@ -64,12 +76,6 @@ export const getClientAndSellsAndEmployee = async() =>{
 // ciudad de la oficina a la que 
 // pertenece el representante.
 
-import {
-    getPaymentsFromClients,
-} from "./payments.js"
-
-
-
 export const getClientsFromPayments = async() =>{
     let res = await fetch("http://localhost:5501/clients")
     let data = await res.json()
@@ -99,9 +105,7 @@ export const getClientsFromPayments = async() =>{
 // junto con la ciudad de la oficina a la que 
 // pertenece el representante.
 
-import {
-    getCode_Clients,
-} from "./payments.js"
+
 
 
 
@@ -161,3 +165,35 @@ export const getFromFuenlabrada = async() =>{
     return result
 }
 
+// 10. Devuelve el nombre de los clientes 
+// a los que no se les ha entregado a tiempo un pedido.
+
+export const getRetardedDeliveryClients = async() =>{
+    let res = await fetch("http://localhost:5501/clients")
+    let data = await res.json();
+    let res2 = await getRetardedDeliveries();
+    let verificador = []
+    let result = []
+    res2.forEach(val=>{
+        data.forEach(val2=>{
+            if(val.code_client == val2.client_code){
+                if(!verificador.includes(val.code_client)){
+                    verificador.push(val.code_client)
+                }
+            }
+            
+        })
+    })
+
+    data.forEach(val =>{
+        verificador.forEach(val2=>{
+            if(val.client_code == val2){
+                result.push({
+                    client_name: val.client_name,
+                    client_code: val.client_code
+                })
+            }
+        })
+    })
+    return result
+}
