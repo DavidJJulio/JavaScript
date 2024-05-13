@@ -14,6 +14,7 @@ import {
     getSalesManagerFromClients,
     getNameByClient,
     getEmployeeBoss,
+    getAll3
 } from "./module/employees.js"
 
 
@@ -51,5 +52,5 @@ import {
     getProductsByGamaAndStock,
 } from "./module/product.js"
 
-console.log(await getEmployeeBoss())
+console.log(await getAll3())
 
