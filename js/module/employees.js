@@ -181,3 +181,28 @@ export const getNameByClient = async() =>{
     })
     return result
 }
+
+// MULTITABLA 8. Devuelve un listado con el nombre de los 
+// empleados junto con el nombre de sus jefes.
+
+export const getEmployeeBoss = async() =>{
+    let res = await fetch("http://localhost:5502/employees");
+    let data = await res.json();
+    let result = []
+    data.forEach(val =>{
+        result.push({
+            name: val.name,
+            lastname: val.lastname1,
+            code_boss: val.code_boss
+        })
+    })
+
+    result.forEach(val =>{
+        data.forEach(Boss=>{
+            if(val.code_boss == Boss.employee_code){
+                val.code_boss = {Boss}
+            }
+        })
+    })
+    return result
+}

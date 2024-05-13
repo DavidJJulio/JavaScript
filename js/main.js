@@ -13,6 +13,7 @@ import {
     getEmployeeOfTheClient,
     getSalesManagerFromClients,
     getNameByClient,
+    getEmployeeBoss,
 } from "./module/employees.js"
 
 
@@ -50,5 +51,5 @@ import {
     getProductsByGamaAndStock,
 } from "./module/product.js"
 
-console.log(typeof(await getSpainClients()))
+console.log(await getEmployeeBoss())
 
