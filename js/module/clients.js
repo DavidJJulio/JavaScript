@@ -165,7 +165,7 @@ export const getFromFuenlabrada = async() =>{
     return result
 }
 
-// 10. Devuelve el nombre de los clientes 
+// MULTITABLA 10. Devuelve el nombre de los clientes 
 // a los que no se les ha entregado a tiempo un pedido.
 
 export const getRetardedDeliveryClients = async() =>{
@@ -197,3 +197,24 @@ export const getRetardedDeliveryClients = async() =>{
     })
     return result
 }
+// Devuelve el codigo de los clientes
+
+export const getClientCode = async() =>{
+    let res = await fetch("http://localhost:5501/clients")
+    let data = await res.json()
+    let result = []
+    data.forEach(val =>{
+        if(!result.includes(val.client_code)){
+          result.push({
+            client_code: val.client_code,
+            client_purchases: null
+          })  
+        }
+        
+    })
+    return result
+}
+
+// MULTITABLA 11. Devuelve un listado de las diferentes gamas de 
+// producto que ha comprado cada cliente.
+

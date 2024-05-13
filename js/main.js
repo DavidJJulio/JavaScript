@@ -26,6 +26,7 @@ import {
     getClientsByPayments,
     getFromFuenlabrada,
     getRetardedDeliveryClients,
+    getClientCode,
 } from "./module/clients.js"
 
 
@@ -36,9 +37,12 @@ import {
     getRightDeliveries,
     getRejectedDeliveriesFromDate,
     getJanuaryDeliveries,
+    getRequestByClientCode,
 } from "./module/requests.js"
 
-
+import {
+    getProductCodeByCodeRequest,
+} from "./module/request_details.js"
 
 import {
     getClientsCodeFromSpecificDate,
@@ -51,7 +55,8 @@ import {
 
 import {
     getProductsByGamaAndStock,
+    getGamaByCodeRequest,
 } from "./module/product.js"
 
-console.log(await getRetardedDeliveryClients())
+console.log(await getGamaByCodeRequest())
 

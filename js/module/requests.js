@@ -1,3 +1,7 @@
+import {
+    getClientCode,
+} from "./clients.js"
+
 // 7. Devuelve un listado con los distintos 
 // estados por los que puede pasar un pedido.
 
@@ -111,6 +115,45 @@ export const getJanuaryDeliveries = async() =>{
                 result.push(val)
             }
         } 
+    })
+    return result
+}
+
+// MULTITABLA 11. Devuelve un listado de las diferentes gamas de 
+// producto que ha comprado cada cliente.
+
+export const getRequestByClientCode = async() =>{
+    let res = await fetch("http://localhost:5508/requests");
+    let data = await res.json();
+    let res2 = await getClientCode();
+    let clientes = []
+    let result = []
+    data.forEach(val =>{
+        res2.forEach(val2 =>{
+            if(val.code_client == val2.client_code){
+                if(!clientes.includes(val2.client_code)){
+                    clientes.push(val2.client_code)
+                }
+            }
+        })
+    })
+    clientes.forEach(val =>{
+        result.push({
+            client_code: val,
+            client_purchases: []
+        })
+    })
+    result.forEach(val =>{
+        data.forEach(val2 =>{
+            if(val.client_code == val2.code_client){
+                val.client_purchases.push({
+                    code_request: val2.code_request,
+                    product_code: null,
+                    product_gama: null
+                })
+            }
+        }
+        )
     })
     return result
 }

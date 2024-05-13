@@ -1,3 +1,8 @@
+import {
+    getProductCodeByCodeRequest,
+} from "./request_details.js"
+
+
 // 15. Devuelve un listado con todos los productos 
 // que pertenecen a la gama `Ornamentales` y que 
 // tienen más de `100` unidades en stock. 
@@ -33,4 +38,24 @@ export const getProductsByGamaAndStock = async() =>{
         })
     })
     return result
+}
+
+// MULTITABLA 11. Devuelve un listado de las diferentes gamas de 
+// producto que ha comprado cada cliente.
+
+export const getGamaByCodeRequest = async() =>{
+    let res = await fetch("http://localhost:5506/products")
+    let data = await res.json();
+    let res2 = await getProductCodeByCodeRequest();
+    let result = [];
+    res2.forEach(val =>{
+        val.client_purchases.forEach(val2 =>{
+            data.forEach(val3=>{
+                if(val2.product_code == val3.code_product){
+                    val2.product_gama = val3.gama
+                }
+            })
+        })
+    })
+    return res2[0]
 }

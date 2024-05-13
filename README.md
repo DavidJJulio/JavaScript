@@ -38,8 +38,8 @@ DONE 6. Lista la dirección de las oficinas que tengan clientes en `Fuenlabrada`
 DONE 7. Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
 DONE 8. Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.
 DONE 9. Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y el nombre del jefe de sus jefe.
-10. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
-11. Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
+DONE 10. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
+DONE 11. Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
 
 ### Consultas multitabla (Composición externa)
 
