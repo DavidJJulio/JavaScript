@@ -44,7 +44,7 @@ DONE 11. Devuelve un listado de las diferentes gamas de producto que ha comprado
 ### Consultas multitabla (Composición externa)
 
 
-1. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
+DONE 1. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
 DONE 2. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pedido.
 3. Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.
 4. Devuelve un listado que muestre solamente los empleados que no tienen una oficina asociada.

@@ -40,6 +40,7 @@ import {
     getJanuaryDeliveries,
     getRequestByClientCode,
     getClientsWithoutRequests,
+    getClientsWithoutPaymentsAndRequests,
 } from "./module/requests.js"
 
 import {
@@ -61,5 +62,5 @@ import {
     getGamaByCodeRequest,
 } from "./module/product.js"
 
-console.log(await getClientsWithoutPayments())
+console.log(await getClientsWithoutPaymentsAndRequests())
 

@@ -2,7 +2,14 @@ import {
     getClientCode,
     getAllClients,
 } from "./clients.js"
-import { getAll3 } from "./employees.js"
+
+import { 
+    getAll3
+} from "./employees.js"
+
+import {
+    getClientsWithoutPayments,
+} from "./payments.js"
 
 // 7. Devuelve un listado con los distintos 
 // estados por los que puede pasar un pedido.
@@ -168,8 +175,8 @@ export const getRequestByClientCode = async() =>{
     return result
 }
 
-// MULTITABLA EXTERNA 1. Devuelve un listado que muestre solamente los 
-// clientes que no han realizado ningún pago.
+// MULTITABLA EXTERNA 2. Devuelve un listado que muestre solamente 
+// los clientes que no han realizado ningún pedido.
 
 export const getClientsWithoutRequests = async() =>{
     let res = await fetch("http://localhost:5508/requests");
@@ -201,6 +208,25 @@ export const getClientsWithoutRequests = async() =>{
                 result.push(val)
             }
         })
+    })
+    return result
+}
+
+// 3. Devuelve un listado que muestre los clientes que no han 
+// realizado ningún pago y los que no han realizado ningún pedido.
+
+export const getClientsWithoutPaymentsAndRequests = async() =>{
+    let data = await getClientsWithoutRequests();
+    let data2 = await getClientsWithoutPayments();
+    let result = [{
+        clients_without_payments: [],
+        clients_without_requests: []
+    }]
+    data2.forEach(val=>{
+        result[0].clients_without_payments.push(val)
+    })
+    data.forEach(val=>{
+        result[0].clients_without_requests.push(val)
     })
     return result
 }

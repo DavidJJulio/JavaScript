@@ -131,7 +131,7 @@ export const getCode_Clients = async() =>{
     return result
 }
 
-// MULTITABLA EXTERNA 2. Devuelve un listado que muestre solamente 
+// MULTITABLA EXTERNA 1. Devuelve un listado que muestre solamente 
 // los clientes que no han realizado ningún pago.
 
 export const getClientsWithoutPayments = async() =>{
@@ -167,4 +167,5 @@ export const getClientsWithoutPayments = async() =>{
     })
     return result
 }
+
 
