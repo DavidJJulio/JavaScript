@@ -140,7 +140,15 @@ export const getRequestByClientCode = async() =>{
     clientes.forEach(val =>{
         result.push({
             client_code: val,
+            client_name: null,
             client_purchases: []
+        })
+    })
+    res2.forEach(val =>{
+        result.forEach(val2 =>{
+            if(val.client_code == val2.client_code){
+                val2.client_name = val.client_name
+            }
         })
     })
     result.forEach(val =>{
