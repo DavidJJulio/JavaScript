@@ -51,6 +51,7 @@ import {
     getPaymentMethods,
     getPaymentsPaypalByDate,
     getPaymentsFromClients,
+    getClientsWithoutPayments,
 } from "./module/payments.js"
 
 
@@ -60,5 +61,5 @@ import {
     getGamaByCodeRequest,
 } from "./module/product.js"
 
-console.log(await getClientsWithoutRequests())
+console.log(await getClientsWithoutPayments())
 

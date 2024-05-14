@@ -1,3 +1,8 @@
+import {
+    getAllClients,
+} from "./clients.js"
+
+
 // 8. Devuelve un listado con el código de cliente 
 // de aquellos clientes que realizaron algún pago en 2008. 
 // Tenga en cuenta que deberá eliminar aquellos 
@@ -122,6 +127,43 @@ export const getCode_Clients = async() =>{
             result.push(val.code_client)
         }
         
+    })
+    return result
+}
+
+// MULTITABLA EXTERNA 2. Devuelve un listado que muestre solamente 
+// los clientes que no han realizado ningún pago.
+
+export const getClientsWithoutPayments = async() =>{
+    let res = await fetch("http://localhost:5505/payments")
+    let data = await res.json();
+    let result = [];
+    let res2 = await getAllClients();
+    let Verificador = []
+    let clients = []
+    data.forEach(val =>{
+        res2.forEach(val2 =>{
+            if(val.code_client == val2.client_code){
+                if(!Verificador.includes(val2.client_code)){
+                    Verificador.push(val2.client_code) 
+                }
+                
+            }
+        })
+    })
+    res2.forEach(val =>{
+        Verificador.forEach(val2 =>{
+            if(!Verificador.includes(val.client_code) && !clients.includes(val.client_code)){
+                clients.push(val.client_code)
+            }
+        })
+    })
+    res2.forEach(val =>{
+        clients.forEach(val2 =>{
+            if(val.client_code == val2){
+                result.push(val)
+            }
+        })
     })
     return result
 }
