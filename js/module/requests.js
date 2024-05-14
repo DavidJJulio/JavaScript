@@ -1,6 +1,8 @@
 import {
     getClientCode,
+    getAllClients,
 } from "./clients.js"
+import { getAll3 } from "./employees.js"
 
 // 7. Devuelve un listado con los distintos 
 // estados por los que puede pasar un pedido.
@@ -162,6 +164,43 @@ export const getRequestByClientCode = async() =>{
             }
         }
         )
+    })
+    return result
+}
+
+// MULTITABLA EXTERNA 1. Devuelve un listado que muestre solamente los 
+// clientes que no han realizado ningún pago.
+
+export const getClientsWithoutRequests = async() =>{
+    let res = await fetch("http://localhost:5508/requests");
+    let data = await res.json();
+    let res2 = await getAllClients();
+    let result = []
+    let Verificador = []
+    let clients = []
+    data.forEach(val =>{
+        res2.forEach(val2 =>{
+            if(val.code_client == val2.client_code){
+                if(!Verificador.includes(val2.client_code)){
+                    Verificador.push(val2.client_code) 
+                }
+                
+            }
+        })
+    })
+    res2.forEach(val =>{
+        Verificador.forEach(val2 =>{
+            if(!Verificador.includes(val.client_code) && !clients.includes(val.client_code)){
+                clients.push(val.client_code)
+            }
+        })
+    })
+    res2.forEach(val =>{
+        clients.forEach(val2 =>{
+            if(val.client_code == val2){
+                result.push(val)
+            }
+        })
     })
     return result
 }
