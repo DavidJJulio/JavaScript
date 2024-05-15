@@ -1,3 +1,10 @@
+import {
+    getSalesManagerFromClients,
+    getNameByClient,
+    getEmployeeOfTheClient,
+    getEmployeesWithoutClients,
+} from "./employees.js"
+
 // 1. Devuelve un listado con el código de oficina 
 // y la ciudad donde hay oficinas.
 
@@ -43,11 +50,7 @@ export const getOfficesFromSpain = async() =>{
 // junto con la ciudad de la oficina a la que 
 // pertenece el representante.
 
-import {
-    getSalesManagerFromClients,
-    getNameByClient,
-    getEmployeeOfTheClient,
-} from "./employees.js"
+
 
 export const getOfficesByEmployees = async() =>{
     let res = await fetch("http://localhost:5504/offices")
@@ -70,4 +73,25 @@ export const getOfficesByEmployees = async() =>{
         })
     })
     return result
+}
+
+// 6. Devuelve un listado que muestre solamente los 
+// empleados que no tienen un cliente 
+// asociado junto con los datos de 
+// la oficina donde trabajan.
+
+export const getOfficesbyEmployeesWithoutClients = async() =>{
+    let res2 = await getEmployeesWithoutClients();
+    let res = await fetch(`http://localhost:5502/employees`)
+    let data = await res.json();
+    let result = []
+    res2.forEach(val =>{
+        data.forEach(val2 =>{
+            if(val.code_office == val2.code_office){
+                val.office_info = val2
+            }
+        })
+    })
+    
+    return res2[0]
 }

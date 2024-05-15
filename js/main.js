@@ -2,6 +2,7 @@ import {
     getOfficesbyCity,
     getOfficesFromSpain,
     getOfficesByEmployees,
+    getOfficesbyEmployeesWithoutClients,
 } from "./module/offices.js"
 
 
@@ -65,5 +66,5 @@ import {
     getGamaByCodeRequest,
 } from "./module/product.js"
 
-console.log(await getEmployeesWithoutClients())
+console.log(await getOfficesbyEmployeesWithoutClients())
 

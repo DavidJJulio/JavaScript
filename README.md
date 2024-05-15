@@ -49,7 +49,7 @@ DONE 2. Devuelve un listado que muestre solamente los clientes que no han realiz
 DONE 3. Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.
 DONE 4. Devuelve un listado que muestre solamente los empleados que no tienen una oficina asociada.
 DONE 5. Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado.
-6. Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado junto con los datos de la oficina donde trabajan.
+DONE 6. Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado junto con los datos de la oficina donde trabajan.
 7. Devuelve un listado que muestre los empleados que no tienen una oficina asociada y los que no tienen un cliente asociado.
 8. Devuelve un listado de los productos que nunca han aparecido en un pedido.
 9. Devuelve un listado de los productos que nunca han aparecido en un pedido. El resultado debe mostrar el nombre, la descripción y la imagen del producto.
