@@ -87,8 +87,9 @@ body {
 .report__menu button {
     min-width: 30%;
     height: 45px;
+    border-radius: 10px;
     text-transform: uppercase;
-    border: none;
+    border: 1px solid #0c935833;
     background: transparent;
     color: var(--color2);
     font-family: "Roboto-Bold";
@@ -110,7 +111,7 @@ body {
 .report__details {
     /* background: violet; */
     margin-top: var(--layout-box-y);
-    height: 290px;
+    height: 90%;
     overflow-y: scroll;
 }
 .report__details details{
