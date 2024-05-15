@@ -21,3 +21,17 @@ export const getProductCodeByCodeRequest = async() =>{
     return res2
 }
 
+// 8. Devuelve un listado de los productos 
+// que nunca han aparecido en un pedido.
+
+export const getCodeProductsByRequests = async() =>{
+    let res = await fetch("http://localhost:5507/request_details")
+    let data = await res.json();
+    let result = []
+    data.forEach(val =>{
+        if(!result.includes(val.product_code)){
+            result.push(val.product_code)
+        }
+    })
+    return result
+}

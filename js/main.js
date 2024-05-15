@@ -50,6 +50,7 @@ import {
 
 import {
     getProductCodeByCodeRequest,
+    getCodeProductsByRequests,
 } from "./module/request_details.js"
 
 import {
@@ -65,7 +66,8 @@ import {
 import {
     getProductsByGamaAndStock,
     getGamaByCodeRequest,
+    getProductsWithoutRequests,
 } from "./module/product.js"
 
-console.log(await getEmployeesWithoutSomething())
+console.log(await getProductsWithoutRequests())
 

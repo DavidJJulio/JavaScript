@@ -1,5 +1,6 @@
 import {
     getProductCodeByCodeRequest,
+    getCodeProductsByRequests,
 } from "./request_details.js"
 
 
@@ -58,4 +59,24 @@ export const getGamaByCodeRequest = async() =>{
         })
     })
     return res2[0]
+}
+
+// 8. Devuelve un listado de los productos 
+// que nunca han aparecido en un pedido.
+
+export const getProductsWithoutRequests = async() =>{
+    let res = await fetch("http://localhost:5506/products")
+    let data = await res.json();
+    let res2 = await getCodeProductsByRequests();
+    let result = []
+    data.forEach(val =>{
+        res2.forEach(val2 =>{
+            if(val.code_product != val2){
+                if(!result.includes(val.code_product)){
+                    result.push(val.code_product)
+                }
+            }
+        })
+    })
+    return result
 }
