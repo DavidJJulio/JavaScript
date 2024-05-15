@@ -46,8 +46,8 @@ DONE 11. Devuelve un listado de las diferentes gamas de producto que ha comprado
 
 DONE 1. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
 DONE 2. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pedido.
-3. Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.
-4. Devuelve un listado que muestre solamente los empleados que no tienen una oficina asociada.
+DONE 3. Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.
+DONE 4. Devuelve un listado que muestre solamente los empleados que no tienen una oficina asociada.
 5. Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado.
 6. Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado junto con los datos de la oficina donde trabajan.
 7. Devuelve un listado que muestre los empleados que no tienen una oficina asociada y los que no tienen un cliente asociado.

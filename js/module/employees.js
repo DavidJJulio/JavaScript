@@ -239,3 +239,7 @@ export const getAll3 = async()=>{
     }
     return dataEmployees;
 }
+
+export const getEmployeesWithoutOffice = async() =>{
+    return "No hay empleados sin oficina asociada"
+}

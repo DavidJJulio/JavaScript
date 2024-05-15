@@ -14,7 +14,8 @@ import {
     getSalesManagerFromClients,
     getNameByClient,
     getEmployeeBoss,
-    getAll3
+    getAll3,
+    getEmployeesWithoutOffice,
 } from "./module/employees.js"
 
 
@@ -62,5 +63,5 @@ import {
     getGamaByCodeRequest,
 } from "./module/product.js"
 
-console.log(await getClientsWithoutPaymentsAndRequests())
+console.log(await getEmployeesWithoutOffice())
 
