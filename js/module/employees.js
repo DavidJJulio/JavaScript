@@ -1,3 +1,11 @@
+import {
+    getClientAndSellsAndEmployee,
+    getClientsByPayments,
+    getFromFuenlabrada,
+    getClientsFromPayments,
+    getEmployeeByClients,
+} from "./clients.js"
+
 // 3. Devuelve un listado con el nombre, 
 // apellidos y email de los empleados 
 // cuyo jefe tiene un código de jefe igual a 7.
@@ -74,9 +82,7 @@ export const getEmployeesDiff_from_SpecificPosition = async() =>{
 // el nombre de sus representantes junto con la 
 // ciudad de la oficina a la que pertenece el representante.
 
-import {
-    getClientAndSellsAndEmployee
-} from "./clients.js"
+
 
 export const getEmployeeOfTheClient = async() =>{
     let res = await fetch("http://localhost:5502/employees")
@@ -117,10 +123,7 @@ export const getEmployeeOfTheClient = async() =>{
 // MULTITABLA 6. Lista la dirección de las 
 // oficinas que tengan clientes en `Fuenlabrada`.
 
-import {
-    getClientsFromPayments,
-    getFromFuenlabrada,
-} from "./clients.js"
+
 
 
 
@@ -157,9 +160,7 @@ export const getSalesManagerFromClients = async() =>{
 // junto con la ciudad de la oficina a la que 
 // pertenece el representante.
 
-import {
-    getClientsByPayments,
-} from "./clients.js"
+
 
 export const getNameByClient = async() =>{
     let res = await fetch("http://localhost:5502/employees")
@@ -242,4 +243,20 @@ export const getAll3 = async()=>{
 
 export const getEmployeesWithoutOffice = async() =>{
     return "No hay empleados sin oficina asociada"
+}
+
+// 5. Devuelve un listado que muestre solamente 
+// los empleados que no tienen un cliente asociado.
+
+export const getEmployeesWithoutClients = async() =>{
+    let res2 = await getEmployeeByClients();
+    let res = await fetch(`http://localhost:5502/employees`)
+    let data = await res.json();
+    let result = []
+    data.forEach(val =>{
+        if(!res2.includes(val.employee_code)){
+            result.push(val)
+        }
+    })
+    return result
 }

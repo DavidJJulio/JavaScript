@@ -237,3 +237,17 @@ export const getAllClients = async() =>{
 
 }
 
+// 5. Devuelve un listado que muestre solamente 
+// los empleados que no tienen un cliente asociado.
+
+export const getEmployeeByClients = async() =>{
+    let res = await fetch("http://localhost:5501/clients")
+    let data = await res.json()
+    let result = []
+    data.forEach(val =>{
+        if(!result.includes(val.code_employee_sales_manager)){
+            result.push(val.code_employee_sales_manager)
+        }
+    })
+    return result
+}

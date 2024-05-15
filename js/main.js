@@ -16,6 +16,7 @@ import {
     getEmployeeBoss,
     getAll3,
     getEmployeesWithoutOffice,
+    getEmployeesWithoutClients,
 } from "./module/employees.js"
 
 
@@ -29,6 +30,7 @@ import {
     getRetardedDeliveryClients,
     getClientCode,
     getAllClients,
+    getEmployeeByClients,
 } from "./module/clients.js"
 
 
@@ -63,5 +65,5 @@ import {
     getGamaByCodeRequest,
 } from "./module/product.js"
 
-console.log(await getEmployeesWithoutOffice())
+console.log(await getEmployeesWithoutClients())
 
