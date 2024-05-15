@@ -93,5 +93,5 @@ export const getOfficesbyEmployeesWithoutClients = async() =>{
         })
     })
     
-    return res2[0]
+    return res2
 }

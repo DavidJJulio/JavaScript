@@ -260,3 +260,16 @@ export const getEmployeesWithoutClients = async() =>{
     })
     return result
 }
+
+// 7. Devuelve un listado que muestre los empleados 
+// que no tienen una oficina asociada y los 
+// que no tienen un cliente asociado.
+
+export const getEmployeesWithoutSomething = async() =>{
+    let res = await getEmployeesWithoutClients();
+    let result = [{
+        employees_without_office: "No hay clientes sin oficina asociada",
+        employee_without_clients: res,
+    }]
+    return result
+}

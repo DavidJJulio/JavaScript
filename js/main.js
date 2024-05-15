@@ -18,6 +18,7 @@ import {
     getAll3,
     getEmployeesWithoutOffice,
     getEmployeesWithoutClients,
+    getEmployeesWithoutSomething
 } from "./module/employees.js"
 
 
@@ -66,5 +67,5 @@ import {
     getGamaByCodeRequest,
 } from "./module/product.js"
 
-console.log(await getOfficesbyEmployeesWithoutClients())
+console.log(await getEmployeesWithoutSomething())
 
