@@ -17,7 +17,8 @@ button.forEach(val=>{
         
     if(e.target.innerHTML == "clients"){
         report__details.innerHTML = /*html*/`
-        <my-details></my-details>
+        <my-details logic ="client_1" text ="6. Devuelve un listado con el nombre de los todos los clientes españoles. "></my-details>
+        <my-details logic ="client_2" text ="16. Devuelve un listado con todos los clientes que sean de la ciudad de Madrid y cuyo representante de ventas tenga el código de empleado 11 o 30. "></my-details>
         `
     }
     if(e.target.innerHTML=="employees"){

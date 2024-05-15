@@ -1,6 +1,6 @@
 
 export class Mydetails extends HTMLElement{
-    marquee
+    p
     myCard
     details
     static query
@@ -34,7 +34,7 @@ export class Mydetails extends HTMLElement{
     }
     attributeChangedCallback(name, old, now) {
         if(name == "logic") Mydetails.query = now
-        if(name == "text") this.marquee.textContent = now
+        if(name == "text") this.p.textContent = now
     }
 }
 
