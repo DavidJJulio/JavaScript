@@ -80,3 +80,25 @@ export const getProductsWithoutRequests = async() =>{
     })
     return result
 }
+
+// 9. Devuelve un listado de los productos que nunca 
+// han aparecido en un pedido. El resultado debe mostrar el 
+// nombre, la descripción y la imagen del producto.
+
+export const getProductsAllWithoutRequests = async() =>{
+    let res = await fetch("http://localhost:5506/products")
+    let data = await res.json();
+    let res2 = await getProductsWithoutRequests();
+    let result = []
+    data.forEach(val =>{
+        if(res2.includes(val.code_product)){
+            result.push({
+                code_product: val.code_product,
+                name: val.name,
+                description: val.description,
+                imagen: null,
+            })
+        }
+    })
+    return result
+}

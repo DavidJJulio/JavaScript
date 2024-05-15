@@ -67,7 +67,8 @@ import {
     getProductsByGamaAndStock,
     getGamaByCodeRequest,
     getProductsWithoutRequests,
+    getProductsAllWithoutRequests,
 } from "./module/product.js"
 
-console.log(await getProductsWithoutRequests())
+console.log(await getProductsAllWithoutRequests())
 
