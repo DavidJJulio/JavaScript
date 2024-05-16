@@ -70,5 +70,5 @@ import {
     getProductsAllWithoutRequests,
 } from "./module/product.js"
 
-console.log(await getClientsFromCityBySalesManagerCode())
+console.log(await getBoss())
 
