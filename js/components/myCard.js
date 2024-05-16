@@ -1,8 +1,70 @@
 import {
     getSpainClients,
     getClientsFromCityBySalesManagerCode,
-    
+    getClientAndSellsAndEmployee,
+    getClientsFromPayments,
+    getClientsByPayments,
+    getFromFuenlabrada,
+    getRetardedDeliveryClients,
+    getClientCode,
+    getAllClients,
+    getEmployeeByClients
 } from "../module/clients.js"
+
+import {
+    getInfoEmployeesByBoss,
+    getBoss,
+    getEmployeesDiff_from_SpecificPosition,
+    getEmployeeOfTheClient,
+    getSalesManagerFromClients,
+    getNameByClient,
+    getEmployeeBoss,
+    getAllEmploy,
+    getEmployByCode,
+    getAll3,
+    getEmployeesWithoutClients,
+    getEmployeesWithoutOffice,
+    getEmployeesWithoutSomething,
+} from "../module/employees.js"
+
+import {
+    getOfficesbyCity,
+    getOfficesFromSpain,
+    getOfficesByEmployees,
+    getOfficesbyEmployeesWithoutClients,
+} from "../module/offices.js"
+
+import {
+    getClientsCodeFromSpecificDate,
+    getPaymentsPaypalByDate,
+    getPaymentMethods,
+    getPaymentsFromClients,
+    getCode_Clients,
+    getClientsWithoutPayments,
+} from "../module/payments.js"
+
+import {
+    getProductsByGamaAndStock,
+    getGamaByCodeRequest,
+    getProductsWithoutRequests,
+    getProductsAllWithoutRequests,
+} from "../module/product.js"
+
+import {
+    getProductCodeByCodeRequest,
+    getCodeProductsByRequests,
+} from "../module/request_details.js"
+
+import {
+    getRequestStatus,
+    getRetardedDeliveries,
+    getRightDeliveries,
+    getRejectedDeliveriesFromDate,
+    getJanuaryDeliveries,
+    getRequestByClientCode,
+    getClientsWithoutRequests,
+    getClientsWithoutPaymentsAndRequests,
+} from "../module/requests.js"
 
 export class Mycard extends HTMLElement{
     constructor(){
