@@ -10,7 +10,7 @@ import {
 // Resuelva la consulta:
 
 export const getClientsCodeFromSpecificDate = async() =>{
-    let res = await fetch("http://localhost:5505/payments")
+    let res = await fetch("http://172.16.101.146:5485/payments")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -29,7 +29,7 @@ export const getClientsCodeFromSpecificDate = async() =>{
 // resultado de mayor a menor.
 
 export const getPaymentsPaypalByDate = async() =>{
-    let res = await fetch("http://localhost:5505/payments?payment=PayPal")
+    let res = await fetch("http://172.16.101.146:5485/payments?payment=PayPal")
     let data = await res.json();
     let result = []
     let Temporal2 = []
@@ -65,7 +65,7 @@ export const getPaymentsPaypalByDate = async() =>{
 // formas de pago repetidas.
 
 export const getPaymentMethods = async() =>{
-    let res = await fetch("http://localhost:5505/payments")
+    let res = await fetch("http://172.16.101.146:5485/payments")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -95,7 +95,7 @@ export const getPaymentMethods = async() =>{
 
 
 export const getPaymentsFromClients = async() =>{
-    let res = await fetch("http://localhost:5505/payments")
+    let res = await fetch("http://172.16.101.146:5485/payments")
     let data = await res.json();
     let result = [];
     data.forEach(val =>{
@@ -119,7 +119,7 @@ export const getPaymentsFromClients = async() =>{
 // pertenece el representante.
 
 export const getCode_Clients = async() =>{
-    let res = await fetch("http://localhost:5505/payments")
+    let res = await fetch("http://172.16.101.146:5485/payments")
     let data = await res.json();
     let result = [];
     data.forEach(val =>{
@@ -135,7 +135,7 @@ export const getCode_Clients = async() =>{
 // los clientes que no han realizado ningún pago.
 
 export const getClientsWithoutPayments = async() =>{
-    let res = await fetch("http://localhost:5505/payments")
+    let res = await fetch("http://172.16.101.146:5485/payments")
     let data = await res.json();
     let result = [];
     let res2 = await getAllClients();

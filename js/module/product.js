@@ -11,7 +11,7 @@ import {
 // mostrando en primer lugar los de mayor precio.
 
 export const getProductsByGamaAndStock = async() =>{
-    let res = await fetch("http://localhost:5506/products?gama=Ornamentales")
+    let res = await fetch("http://172.16.101.146:5486/products?gama=Ornamentales")
     let data = await res.json();
     let result = [];
     let temporal = [];
@@ -45,7 +45,7 @@ export const getProductsByGamaAndStock = async() =>{
 // producto que ha comprado cada cliente.
 
 export const getGamaByCodeRequest = async() =>{
-    let res = await fetch("http://localhost:5506/products")
+    let res = await fetch("http://172.16.101.146:5486/products")
     let data = await res.json();
     let res2 = await getProductCodeByCodeRequest();
     let result = [];
@@ -65,7 +65,7 @@ export const getGamaByCodeRequest = async() =>{
 // que nunca han aparecido en un pedido.
 
 export const getProductsWithoutRequests = async() =>{
-    let res = await fetch("http://localhost:5506/products")
+    let res = await fetch("http://172.16.101.146:5486/products")
     let data = await res.json();
     let res2 = await getCodeProductsByRequests();
     let result = []
@@ -86,7 +86,7 @@ export const getProductsWithoutRequests = async() =>{
 // nombre, la descripción y la imagen del producto.
 
 export const getProductsAllWithoutRequests = async() =>{
-    let res = await fetch("http://localhost:5506/products")
+    let res = await fetch("http://172.16.101.146:5486/products")
     let data = await res.json();
     let res2 = await getProductsWithoutRequests();
     let result = []

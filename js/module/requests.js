@@ -15,7 +15,7 @@ import {
 // estados por los que puede pasar un pedido.
 
 export const getRequestStatus = async() =>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5488/requests")
     let data = await res.json()
     let result = []
     data.forEach(val => {
@@ -31,7 +31,7 @@ export const getRequestStatus = async() =>{
 // de los pedidos que no han sido entregados a tiempo.
 
 export const getRetardedDeliveries = async() =>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5488/requests")
     let data = await res.json()
     let suma = []
     let result = []
@@ -67,7 +67,7 @@ export const getRetardedDeliveries = async() =>{
 // antes de la fecha esperada.
 
 export const getRightDeliveries = async() =>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5488/requests")
     let data = await res.json()
     let suma = []
     let result = []
@@ -100,7 +100,7 @@ export const getRightDeliveries = async() =>{
 // que fueron **rechazados** en `2009`.
 
 export const getRejectedDeliveriesFromDate = async() =>{
-    let res = await fetch("http://localhost:5508/requests?status=Rechazado")
+    let res = await fetch("http://172.16.101.146:5488/requests?status=Rechazado")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -115,7 +115,7 @@ export const getRejectedDeliveriesFromDate = async() =>{
 // **entregados** en el mes de enero de cualquier año.
 
 export const getJanuaryDeliveries = async() =>{
-    let res = await fetch("http://localhost:5508/requests?status=Entregado")
+    let res = await fetch("http://172.16.101.146:5488/requests?status=Entregado")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -132,7 +132,7 @@ export const getJanuaryDeliveries = async() =>{
 // producto que ha comprado cada cliente.
 
 export const getRequestByClientCode = async() =>{
-    let res = await fetch("http://localhost:5508/requests");
+    let res = await fetch("http://172.16.101.146:5488/requests");
     let data = await res.json();
     let res2 = await getClientCode();
     let clientes = []
@@ -179,7 +179,7 @@ export const getRequestByClientCode = async() =>{
 // los clientes que no han realizado ningún pedido.
 
 export const getClientsWithoutRequests = async() =>{
-    let res = await fetch("http://localhost:5508/requests");
+    let res = await fetch("http://172.16.101.146:5488/requests");
     let data = await res.json();
     let res2 = await getAllClients();
     let result = []

@@ -14,7 +14,7 @@ import {
 // todos los clientes españoles.
 
 export const getSpainClients = async() =>{
-    let res = await fetch("http://localhost:5501/clients?country=Spain")
+    let res = await fetch("http://172.16.101.146:5481/clients?country=Spain")
     let data = await res.json()
     let result = []
     data.forEach(val => {
@@ -32,7 +32,7 @@ export const getSpainClients = async() =>{
 // código de empleado `11` o `30`.
 
 export const getClientsFromCityBySalesManagerCode = async() =>{
-    let res = await fetch("http://localhost:5501/clients?city=Madrid")
+    let res = await fetch("http://172.16.101.146:5481/clients?city=Madrid")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -52,7 +52,7 @@ export const getClientsFromCityBySalesManagerCode = async() =>{
 // ciudad de la oficina a la que pertenece el representante.
 
 export const getClientAndSellsAndEmployee = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5481/clients")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -77,7 +77,7 @@ export const getClientAndSellsAndEmployee = async() =>{
 // pertenece el representante.
 
 export const getClientsFromPayments = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5481/clients")
     let data = await res.json()
     let res2 = await getPaymentsFromClients()
     let result = []
@@ -110,7 +110,7 @@ export const getClientsFromPayments = async() =>{
 
 
 export const getClientsByPayments = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5481/clients")
     let data = await res.json()
     let res2 = await getCode_Clients()
     let temporal = []
@@ -146,7 +146,7 @@ export const getClientsByPayments = async() =>{
 // oficinas que tengan clientes en `Fuenlabrada`.
 
 export const getFromFuenlabrada = async() =>{
-    let res = await fetch("http://localhost:5501/clients?city=Fuenlabrada")
+    let res = await fetch("http://172.16.101.146:5481/clients?city=Fuenlabrada")
     let data = await res.json()
     let res2 = await getPaymentsFromClients()
     let result = []
@@ -169,7 +169,7 @@ export const getFromFuenlabrada = async() =>{
 // a los que no se les ha entregado a tiempo un pedido.
 
 export const getRetardedDeliveryClients = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5481/clients")
     let data = await res.json();
     let res2 = await getRetardedDeliveries();
     let verificador = []
@@ -203,7 +203,7 @@ export const getRetardedDeliveryClients = async() =>{
 
 // Devuelve el codigo de los clientes
 export const getClientCode = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5481/clients")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -231,7 +231,7 @@ export const getClientCode = async() =>{
 // Devuelve todos los clientes
 
 export const getAllClients = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5481/clients")
     let data = await res.json()
     return data
 
@@ -241,7 +241,7 @@ export const getAllClients = async() =>{
 // los empleados que no tienen un cliente asociado.
 
 export const getEmployeeByClients = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5481/clients")
     let data = await res.json()
     let result = []
     data.forEach(val =>{

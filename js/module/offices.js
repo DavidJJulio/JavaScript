@@ -9,7 +9,7 @@ import {
 // y la ciudad donde hay oficinas.
 
 export const getOfficesbyCity = async() =>{
-    let res = await fetch("http://localhost:5504/offices")
+    let res = await fetch("http://172.16.101.146:5484/offices")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -25,7 +25,7 @@ export const getOfficesbyCity = async() =>{
 // teléfono de las oficinas de España. 
 
 export const getOfficesFromSpain = async() =>{
-    let res = await fetch("http://localhost:5504/offices?country=España")
+    let res = await fetch("http://172.16.101.146:5484/offices?country=España")
     let data = await res.json()
     let result = []
     data.forEach(val =>{
@@ -53,7 +53,7 @@ export const getOfficesFromSpain = async() =>{
 
 
 export const getOfficesByEmployees = async() =>{
-    let res = await fetch("http://localhost:5504/offices")
+    let res = await fetch("http://172.16.101.146:5484/offices")
     let data = await res.json()
     let result = []
     let res2 = await getEmployeeOfTheClient();
@@ -82,7 +82,7 @@ export const getOfficesByEmployees = async() =>{
 
 export const getOfficesbyEmployeesWithoutClients = async() =>{
     let res2 = await getEmployeesWithoutClients();
-    let res = await fetch(`http://localhost:5502/employees`)
+    let res = await fetch(`http://172.16.101.146:5482/employees`)
     let data = await res.json();
     let result = []
     res2.forEach(val =>{
