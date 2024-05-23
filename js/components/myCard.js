@@ -153,16 +153,140 @@ export class Mycard extends HTMLElement{
                 </div>
                         `;
     }
-
+    async getRetardedDeliveryClientsDesign(){
+        let data = await getRetardedDeliveryClients()
+        data.forEach(val => {
+            this.shadowRoot.innerHTML += /* html */`
+                <div class="report__card">
+                    <div class="card__title">
+                            <div>Empleados que tengan oficina en Fuenlabrada</div>
+                        </div>
+                            <div class="card__body">
+                                <div class="body__marck">
+                                    <p><b>Nombre: </b>${val.client_name}</p>
+                                    <p><b>Codigo del cliente: </b>${val.client_code}</p>
+                                </div>
+                        </div>
+                </div>
+                        `;
+                    });
+    }
+    async getNameByClientDesign(){
+        let data = await getNameByClient()
+        data.forEach(val => {
+            this.shadowRoot.innerHTML += /* html */`
+                <div class="report__card">
+                    <div class="card__title">
+                            <div>Empleados que tengan oficina en Fuenlabrada</div>
+                        </div>
+                            <div class="card__body">
+                                <div class="body__marck">
+                                    <p><b>Nombre: </b>${val.client_name}</p>
+                                    <p><b>Nombre del empleado: </b>${val.employee_name}</p>
+                                    <p><b>Apellido del empleado: </b>${val.employee_lastname1}</p>
+                                </div>
+                        </div>
+                </div>
+                        `;
+                    });
+    }
+    async getEmployeesWithoutClientsDesign(){
+        let data = await getEmployeesWithoutClients()
+        data.forEach(val => {
+            this.shadowRoot.innerHTML += /* html */`
+                <div class="report__card">
+                    <div class="card__title">
+                            <div>Empleados que tengan oficina en Fuenlabrada</div>
+                        </div>
+                            <div class="card__body">
+                                <div class="body__marck">
+                                    <p><b>Nombre: </b>${val.name}</p>
+                                    <p><b>Apellido del empleado: </b>${val.employee_lastname1}</p>
+                                    <p><b>Email: </b>${val.email}</p>
+                                    <p><b>Posicion: </b>${val.position}</p>
+                                </div>
+                        </div>
+                </div>
+                        `;
+                    });
+    }
+    async getOfficesbyCityDesign(){
+        let data = await getOfficesbyCity()
+        data.forEach(val => {
+            this.shadowRoot.innerHTML += /* html */`
+                <div class="report__card">
+                    <div class="card__title">
+                            <div>Empleados que tengan oficina en Fuenlabrada</div>
+                        </div>
+                            <div class="card__body">
+                                <div class="body__marck">
+                                    <p><b>Ciudad: </b>${val.city}</p>
+                                    <p><b>Codigo de la oficina: </b>${val.code_office}</p>
+                                </div>
+                        </div>
+                </div>
+                        `;
+                    });
+    }
+    async getOfficesFromSpainDesign(){
+        let data = await getOfficesFromSpain()
+        data.forEach(val => {
+            this.shadowRoot.innerHTML += /* html */`
+                <div class="report__card">
+                    <div class="card__title">
+                            <div>Empleados que tengan oficina en Fuenlabrada</div>
+                        </div>
+                            <div class="card__body">
+                                <div class="body__marck">
+                                    <p><b>Ciudad: </b>${val.city}</p>
+                                    <p><b>Movil: </b>${val.movil}</p>
+                                </div>
+                        </div>
+                </div>
+                        `;
+                    });
+    }
+    async getOfficesByEmployeesDesign(){
+        let data = await getOfficesByEmployees()
+        data.forEach(val => {
+            this.shadowRoot.innerHTML += /* html */`
+                <div class="report__card">
+                    <div class="card__title">
+                            <div>Empleados que tengan oficina en Fuenlabrada</div>
+                        </div>
+                            <div class="card__body">
+                                <div class="body__marck">
+                                    <p><b>Nombre del cliente: </b>${val.client_name}</p>
+                                    <p><b>Ciudad del cliente: </b>${val.client_city}</p>
+                                    <p><b>Nombre del empleado: </b>${val.employee_name}</p>
+                                    <p><b>Apellido del empleado: </b>${val.employee_lastname1}</p>
+                                    <p><b>Apellido del empleado: </b>${val.employee_lastname2}</p>
+                                    <p><b>Codigo de la oficina: </b>${val.code_office}</p>
+                                    <p><b>Ciudad de la oficina: </b>${val.office_city}</p>
+                                </div>
+                        </div>
+                </div>
+                        `;
+                    });
+    }
+    
     static get observedAttributes(){
         return ["logic"]
     }
     async attributeChangedCallback(name,old,now){
         if (name === "logic") {
-            if (now === "client_1") {await this.getSpainClientsDesign();}
+            if (now === "client_1") await this.getSpainClientsDesign();
             if (now === "client_2") await this.getClientsFromCityBySalesManagerCodeDesign();
+            if (now === "client_3") await this.getRetardedDeliveryClientsDesign();
             if (now === "employee_1") await this.getInfoEmployeesByBossDesign();
             if (now === "employee_2") await this.getBossDesign();
+            if (now === "employee_3") await this.getNameByClientDesign();
+            if (now === "employee_4") await this.getEmployeesWithoutClientsDesign();
+            if (now === "offices_1") await this.getOfficesbyCityDesign();
+            if (now === "offices_2") await this.getOfficesFromSpainDesign();
+            if (now === "offices_3") await this.getOfficesByEmployeesDesign();
+
+
+        }
     }
-}
 }
